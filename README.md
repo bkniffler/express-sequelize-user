@@ -1,5 +1,6 @@
 # express-sequelize-user
-Expose sequelize query functions in express requests that inject the current user in returned objects
+Expose sequelize query functions in express requests that inject the current user in returned objects.
+Should work with findAll, findById, findOne, findOrInitialize, findOrCreate, create, build.
 
 ## Install
 ```shell
@@ -12,7 +13,7 @@ npm install express-sequelize-user --save
 ...
 app.use(passport.initialize());
 app.use(passport.session());
-// Bind express-sequelize-user
+// Step 1: Bind express-sequelize-user
 require("express-sequelize-user")(app);
 ...
 
@@ -20,7 +21,8 @@ var User = sequelize.define("User", {});
 
 // Expose put user
 app.put("/api/user/:id", app.isAuthenticated, function (req, res, next) {
-   // Expose put user
+   // Step 2: Query
+   // Here is the important part, user req.context.findById(model, id) instead of model.findById(id)
    req.context.findById(User, req.params.id).then(function(item){
       // item.context.user is now req.user
       if(!user){
