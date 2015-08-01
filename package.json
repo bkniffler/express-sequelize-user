@@ -1,0 +1,53 @@
+{
+  "name": "express-sequelize-user",
+  "description": "Expose sequelize query functions in express requests that inject the current user in returned objects",
+  "private": false,
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": {
+    "name": "Benjamin Kniffler",
+    "email": "bkniffler@me.com"
+  },
+  "contributors": [
+    {
+      "name": "Benjamin Kniffler",
+      "email": "bkniffler@me.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkniffler/express-sequelize-user.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bkniffler/express-sequelize-user/issues"
+  },
+  "scripts": {},
+  "dependencies": {
+    "deep-diff": "^0.3.2",
+    "diff": "^1.4.0",
+    "lodash": "^3.10.0",
+    "object-path": "^0.9.2"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "sequelize": "2.0.0 - 3.x.x"
+  },
+  "readmeFilename": "README.md",
+  "keywords": [
+    "sequelize",
+    "sequelize-plugin",
+     "express",
+    "user",
+    "passport",
+    "nodejs"
+  ],
+  "engines": {
+    "node": ">=0.6.21"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/bkniffler/express-sequelize-user/raw/master/License"
+    }
+  ]
+}
