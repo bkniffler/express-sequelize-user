@@ -15,7 +15,8 @@ module.exports = function(app, options){
 
       // Make req.context.findAll and inject user to results
       arrays.forEach(function(name){
-         req.context[name] = function(model){
+         req.context[name] = function(){
+            var model = arguments[0];
             // Strip model from arguments
             Array.prototype.shift.apply(arguments);
             // Apply original function
@@ -31,7 +32,8 @@ module.exports = function(app, options){
       });
       // Make req.context.findById, findOne, ... and inject user to result
       singles.forEach(function(name){
-         req.context[name] = function(model){
+         req.context[name] = function(){
+            var model = arguments[0];
             // Strip model from arguments
             Array.prototype.shift.apply(arguments);
             // Apply original function
@@ -46,7 +48,8 @@ module.exports = function(app, options){
       });
       // Make req.context.build and inject user to result
       singleNoPromise.forEach(function(name){
-         req.context[name] = function(model){
+         req.context[name] = function(){
+            var model = arguments[0];
             // Strip model from arguments
             Array.prototype.shift.apply(arguments);
             // Apply original function
