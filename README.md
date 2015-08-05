@@ -1,4 +1,6 @@
 # express-sequelize-user
+Created for https://github.com/bkniffler/sequelize-revisions
+
 Expose sequelize query functions in express requests that inject the current user in returned objects.
 Should work with findAll, findById, findOne, findOrInitialize, findOrCreate, create, build.
 
@@ -42,4 +44,3 @@ User.addHook("afterUpdate", function(instance){
 });
 ```
 
-Created for: https://github.com/bkniffler/sequelize-revisions
