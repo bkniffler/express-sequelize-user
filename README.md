@@ -41,3 +41,5 @@ User.addHook("afterUpdate", function(instance){
    }
 });
 ```
+
+Created for: https://github.com/bkniffler/sequelize-revisions
