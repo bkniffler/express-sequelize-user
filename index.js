@@ -38,7 +38,6 @@ module.exports = function(app, options){
             Array.prototype.shift.apply(arguments);
             // Apply original function
             return model[name].apply(model, arguments).then(function(result){
-               console.log(result);
                result.context = {
                   user: req.user
                }
