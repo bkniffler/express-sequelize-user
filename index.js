@@ -22,8 +22,10 @@ module.exports = function(app, options){
             // Apply original function
             return model[name].apply(model, arguments).then(function(results){
                results.forEach(function(result){
-                  result.context = {
-                     user: req.user
+                  if(result){
+                     result.context = {
+                        user: req.user
+                     }
                   }
                })
                return results;
@@ -38,8 +40,10 @@ module.exports = function(app, options){
             Array.prototype.shift.apply(arguments);
             // Apply original function
             return model[name].apply(model, arguments).then(function(result){
-               result.context = {
-                  user: req.user
+               if(result){
+                  result.context = {
+                     user: req.user
+                  }
                }
                return result;
             });
@@ -53,8 +57,10 @@ module.exports = function(app, options){
             Array.prototype.shift.apply(arguments);
             // Apply original function
             var result = model[name].apply(model, arguments);
-            result.context = {
-               user: req.user
+            if(result){
+               result.context = {
+                  user: req.user
+               }
             }
             return result;
          };
