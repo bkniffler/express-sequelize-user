@@ -2,7 +2,7 @@
   "name": "express-sequelize-user",
   "description": "Expose sequelize query functions in express requests that inject the current user in returned objects",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.js",
   "author": {
     "name": "Benjamin Kniffler",
